@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Brooklyn Film Festival</title>
+    <meta name="description" content="Brooklyn">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+    <style type="text/css">
+
+      html, body {
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        background: #FDFDFD;
+        width: 1276px
+      }
+
+   p {
+   	   line-height: 200%;
+   }
+
+   h1 {
+   	   font-size: 50px;
+   	   }
+
+   h3 {
+   	   color: black;
+   }
+
+   #footer {
+   	   width: 100%;
+   	   color: white;
+   	   padding-top: 10px;
+   	   background: black;
+   	   opacity: 0.6;
+   }
+
+    /* Header*/
+    .centered {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-bottom: 20px;
+    color: #FFF;
+    text-align: center
+    }
+
+   .list-group-item.active {
+   	   background-color: #5E7F97;
+   }
+
+   .form-group {
+   	   padding: 15px;
+   	   margin-left: 10px;
+   	   margin-right: 30px
+   }
+
+   .form-control {
+
+   	   margin-bottom: 30px;
+   	   border: 2px solid black;
+
+   }
+
+   .about {
+   	   background-size: 100% 100%;
+   	   color: black;
+   	   font-size: 20px;
+   	   padding-top: 50px;
+   	   padding-bottom: 50px;
+   }
+
+   .column-1:after {
+   	   content: ' ';
+   	   position: absolute;
+   	   top: 100%;
+   	   left: 0;
+   	   max-width: 300px;
+   	   width: 100%;
+   	   height: 5px;
+   	   background-color: #f08a69;
+   	   padding-left: 0;
+   }
+
+   #top_row {
+   	   padding: 0;
+   	   margin-top: 10px;
+   	   margin-bottom: 10px;
+   }
+
+   .news {
+   	   padding-top: 50px;
+   	   padding-bottom: 50px;
+   }
+   .news-body {
+   	   font-size: 20px;
+   }
+
+
+   /*section break*/
+
+   .row1 {
+   	   background: black;
+   	   opacity: 0.8;
+   	   height: 532px;
+   	   text-align: center;
+   	   overflow: hidden;
+   }
+
+   .btn-circle {
+   	   background: none;
+    	width: 30px;
+    	font-size: 0.8em;
+    	border-radius: 30px;
+    	color: #EAB459;
+   }
+
+   .navbar-nav li{
+   	   display: inline-block;
+   	   vertical-align: middle;
+   	   text-align: center;
+   	  font-size: 17px;
+   	  padding: 20px;
+   	  color: black;
+   }
+
+   .fixed-header {
+   position: fixed;
+   top: 0px; left:0;
+   width: 100%;
+
+   }
+
+   ul.navigation-primary-list {
+   	   margin-left: 40px;
+   	   float: center;
+   }
+
+   .navigation-primary-list {
+   	   padding-bottom: 10px;
+
+   }
+   .listing-stuff {
+   	   position: relative;
+   	   display: table-row;
+   	   height: 100%
+
+   }
+   .col-xs-6.title {
+   	   display: table;
+   	   padding-top: 0;
+   }
+   .col-xs-3.thumbnail {
+   	   padding: 15px;
+   }
+
+   .col-xs-4 {
+   padding-left: 0;
+   }
+   .col-xs-12 {
+   	   padding: 0;
+   }
+
+  div.form-group {
+  	  padding-left: 0;
+  }
+
+   div.column-1, .column-1:after{
+   	   margin-left: 50px;
+   }
+
+   a {
+   	   display: block;
+   	   border: 2px solid transparent;
+   	   padding: .5em;
+   	   color: black;
+   }
+
+   .title {
+   	   padding: 15px;
+   }
+   .row.programme {
+   	   padding-top: 20px;
+   	   padding-bottom: 20px;
+   	   height: 100%;
+   	   margin-top: 40px;
+   	   margin-bottom: 40px;
+   }
+   .fa-calendar:before, .fa-clock-o:before {
+   	   color: #f08a69;
+   }
+   .film-pic, .title {
+   	   border: 1px solid #efefef;
+   	   height: 100%;
+   }
+
+   /* The navigation bar */
+.navbar {
+    overflow: hidden;
+    background-color: #FDFDFD;
+}
+
+/* Links inside the navbar */
+.navbar a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+}
+
+/* Main content */
+.main {
+    margin-top: 30px; /* Add a top margin to avoid content overlay */
+    }
+
+select{
+    font-size:20px;
+}
+
+/* Map */
+
+.overlay {
+	background:transparent;
+	position:relative;
+	width: 100%; /* your iframe width */
+	height:480px; /* your iframe height */
+	top:480px; /* your iframe height */
+	margin-top:-480px; /* your iframe height */
+}
+
+.container-fluid.google-map {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+ul.nav-item {
+	padding-left: 0;
+}
+
+.partners {
+	margin-bottom: 30px;
+	padding-bottom: 30px;
+}
+
+.event-copyright {
+	text-align: right;
+	margin-top: 10px;
+}
+
+.form-wrapper {
+	border-top: 2px solid black;
+	padding-bottom: 30px;
+}
+
+/* Ticket Pre-register*/
+
+.pre-register {
+	margin-top: 30px;
+}
+
+.col-xs-3.tickets {
+	padding-left: 0;
+}
+
+h4.film-choice, h4.tickets-required {
+	padding-left: 10px;
+}
+
+.getting-there {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.address {
+	margin-top: 20px;
+	text-align: center;
+	padding-right: 0;
+	margin-left: 30px;
+}
+
+#container.address {
+	position: relative;
+	position: -15px
+}
+
+img#getting-there {
+	margin-top: 30px;
+}
+
+		</style>
+	</head>
+
+	<body>
+
+	<header>
+		<div class"fixed-header">
+			<nav class="navbar navbar-fixed-top">
+				<ul class="navbar-nav" href="#">
+				<ul class="navigation-primary-list">
+					<img src="images/festival-logo.png" width="175" height="95">
+				<li class="nav-item">
+					<a href="#about">About</a>
+				</li>
+				<li class="nav-item">
+					<a href="#listings">Listings</a>
+				</li>
+				<li class="nav-item">
+					<a href="#register">Ticket Pre-Register</a>
+				</li>
+				<li class="nav-item">
+					<a href="#news">News</a>
+				</li>
+				<li class="nav-item">
+					<a href="#map">Map</a>
+				</li>
+				</ul>
+			</nav>
+		</div>
+
+		<div class="main">
+			<img src="images/brooklyn_bridge.jpg" style="width:100%">
+		<div class="centered">
+			<h1>Brooklyn Film Festival</h1>
+			<h1 style="font-size: 25px"> 5 August - 8 August 2018 at Brooklyn Bridge Park</h1>
+		</div>
+	</div>
+</header>
+
+
+	<!-- About the festival -->
+
+	<div class="container">
+		<div class="about" id="about">
+			<div class="row" style="color: black">
+				<div class="col-xs-4 offset-col-xs-1" >
+					<div class="column-1">
+					<h1>About</h1>
+					</div>
+				</div>
+
+				<div class="col-xs-7">
+					<p>Brooklyn Film Festival was created by Jennifer Viala
+					(founder of Brooklyn Vibes Events Co.)
+						to show films that would appeal to all ages in at a
+						major outdoor entertainment setting.</p>
+						<br>
+						<p>The chosen venue for the festival is Brooklyn Bridge
+						Park. Brooklyn Bridge Park is a world-class waterfront
+						park with rolling hills, riverfront promenades, lush
+						gardens, and spectacular city views. Our list of
+						amenities continues to grow as we work each day to
+						revitalize this previously deteriorated industrial
+						space and build a park that allows New Yorkers to
+						rediscover the waterfront.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+			<div class="row partners" style="color: black">
+				<nav class="navbar-navbar-default partner-image">
+			<a class="navbar-brand pull-left" href="#">
+				<img src="images/brooklyn_bridge_park.png" id="park_logo">
+			</a>
+			<a class="navbar-brand" href="#">
+    			<img src="images/brooklyn_news.png" id="news_logo"></a>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid">
+		<div class="row row1">
+			<img src="images/brooklyn-image3.png">
+		</div>
+	</div>
+
+	<!-- Programme -->
+
+	<div class="container">
+		<div class="listings" id="listings">
+			<div class="row programme" style="color: black">
+				<div class="col-xs-4">
+					<div class="column-1">
+					<h1>Listings</h1>
+					</div>
+				</div>
+				<div class="listing-stuff">
+					<div class="col-xs-3 film-pic">
+						<img src="images/murder.jpg">
+					</div>
+					<div class="col-xs-6 title">
+						<h2>Murder On The Orient Express</h2>
+						<br>
+						<p> A lavish trip through Europe quickly unfolds into a race
+						against time to solve a murder aboard a train.
+						When an avalanche stops the Orient Express dead in its tracks,
+						the world's greatest detective -- Hercule Poirot
+						-- arrives to interrogate all passengers and
+						search for clues before the killer can strike again.</p>
+					</div>
+
+					<div class="col-xs-3 thumbnail">
+						<i class="fa fa-calendar">&nbsp <strong>05 August</strong></i>
+						<br>
+						<br>
+						<i class="fa fa-clock-o">&nbsp 18.30</i>
+					</div>
+				</div>
+			</div>
+
+			<div class="row programme" style="color: black">
+				<div class="col-xs-4">
+					</div>
+
+				<div class="listing-stuff">
+					<div class="col-xs-3 film-pic">
+						<img src="images/paddington.jpg">
+					</div>
+					<div class="col-xs-6 title">
+						<h2>Paddington 2</h2>
+						<br>
+						<p> Settled in with the Brown family, Paddington the
+						bear is a popular member of the community who spreads
+						joy and marmalade wherever he goes. One fine day, he
+						spots a pop-up book in an antique shop -- the perfect
+						present for his beloved aunt's 100th birthday. When a
+						thief steals the prized book, Paddington embarks on an
+						epic quest to unmask the culprit before Aunt Lucy's big
+						celebration.</p>
+					</div>
+
+					<div class="col-xs-3 thumbnail">
+						<i class="fa fa-calendar">&nbsp <strong>06 August</strong></i>
+						<br>
+						<br>
+						<i class="fa fa-clock-o">&nbsp 13.30</i>
+					</div>
+				</div>
+			</div>
+
+			<div class="row programme" style="color: black">
+				<div class="col-xs-4">
+				</div>
+
+			<div class="listing-stuff">
+					<div class="col-xs-3 film-pic">
+						<img src="images/bladerunner.jpg">
+					</div>
+					<div class="col-xs-6 title">
+						<h2>Blade Runner 2049</h2>
+						<br>
+						<p> Officer K (Ryan Gosling), a new blade runner for the
+						Los Angeles Police Department, unearths a long-buried
+						secret that has the potential to plunge what's left of
+						society into chaos. His discovery leads him on a quest
+						to find Rick Deckard (Harrison Ford), a former blade
+						runner who's been missing for 30 years.</p>
+					</div>
+
+					<div class="col-xs-3 thumbnail">
+						<i class="fa fa-calendar">&nbsp <strong>06 August</strong></i>
+						<br>
+						<br>
+						<i class="fa fa-clock-o">&nbsp 18.30</i>
+					</div>
+				</div>
+			</div>
+
+			<div class="row programme" style="color: black">
+				<div class="col-xs-4">
+				</div>
+
+			<div class="listing-stuff">
+					<div class="col-xs-3 film-pic">
+						<img src="images/lego.jpg">
+					</div>
+					<div class="col-xs-6 title">
+						<h2>The Lego Ninjago Movie</h2>
+						<br>
+						<p> The battle for NINJAGO City calls to action young
+						Master Builder Lloyd, aka the Green Ninja, along with
+						his friends, also secret ninja warriors. Led by Master
+						Wu, as wise-cracking as he is wise, they must defeat the
+						evil warlord Garmadon, who also happens to be Lloyd's
+						dad. Pitting father against son, the epic showdown tests
+						these fierce but undisciplined modern-day ninjas as they
+						learn to check their egos and pull together to unleash
+						the inner power of Spinjitzu.</p>
+					</div>
+
+					<div class="col-xs-3 thumbnail">
+						<i class="fa fa-calendar">&nbsp <strong>07 August</strong></i>
+						<br>
+						<br>
+						<i class="fa fa-clock-o">&nbsp 13.30</i>
+					</div>
+				</div>
+				</div>
+
+				<div class="row programme" style="color: black">
+				<div class="col-xs-4">
+				</div>
+
+				<div class="listing-stuff">
+					<div class="col-xs-3 film-pic">
+						<img src="images/lala.jpg">
+					</div>
+					<div class="col-xs-6 title">
+						<h2>La La Land</h2>
+						<br>
+						<p> Sebastian (Ryan Gosling) and Mia (Emma Stone) are
+						drawn together by their common desire to do what they
+						love. But as success mounts they are faced with
+						decisions that begin to fray the fragile fabric of their
+						love affair, and the dreams they worked so hard to
+						maintain in each other threaten to rip them apart.</p>
+					</div>
+
+					<div class="col-xs-3 thumbnail">
+						<i class="fa fa-calendar">&nbsp <strong>07 August</strong></i>
+						<br>
+						<br>
+						<i class="fa fa-clock-o">&nbsp 18.30</i>
+					</div>
+				</div>
+				</div>
+			</div>
+	</div>
+
+	<!--Pre-register form-->
+
+	<div class="container" id="register">
+			<div class="form-wrapper">
+				<div class="row pre-register" >
+					<div class="col-xs-4">
+						<div class="column-1 pre-reg" >
+							<h1>Pre-register</h1>
+						</div>
+					</div>
+				<div class="col-xs-6">
+	<h4>Register your details here to reserve your seats in advance.</h4>
+						</div>
+					<form>
+					<div class="col-xs-3">
+						<input type="text" class="form-control input-md"
+						id="formGroupExampleInput" placeholder="Name">
+
+						<h4 class="film-choice">Film Choice:</h4>
+						<select class="form-control input-md">
+							<option value="Murder">Murder On The Orient Express</option>
+							<option value="Paddington">Paddington 2</option>
+							<option value="Bladerunner">Bladerunner 2049</option>
+							<option value="Lego">The Lego Nijago Movie</option>
+							<option value="Lalaland">La La Land</option>
+						</select>
+					<button type="submit" class="btn btn-md">Submit</button>
+						</div>
+
+					<div class="col-xs-3">
+						<input type="text" class="form-control input-md"
+						id="formGroupExampleInput2" placeholder="Email Address">
+
+						<h4 class="tickets-required">No. of tickets required:</h4>
+					<div class="col-xs-3 tickets">
+						<select class="form-control input-md">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+					</select>
+				</div>
+			</form>
+		</div>
+		</div>
+			<div class="pre-reg-text">
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid">
+		<div class="row row1">
+			<img src="images/brooklyn-image4.png">
+		</div>
+	</div>
+
+	<!-- News -->
+
+	<div class="container">
+		<div class="news" id="news">
+			<div class="row">
+				<div class="col-xs-4">
+					<div class="column-1">
+						<h1>News</h1>
+					</div>
+				</div>
+
+			 <div class="col-xs-7">
+				<div class="news-body">
+					<h2>Film line up!</h2>
+					<p>The film listing is now up on the website. Just check the programme for the choices so far.</p>
+						<button type="button" class="btn btn-default">Show more</button>
+								<hr>
+								<h2>Festival announced!</h2>
+								<p>The Brooklyn Film Festival dates for 2018 are confirmed!</p>
+							     <button type="button" class="btn btn-default">Show more</button>
+								<hr>
+							<h2>Special guests!</h2>
+					<p>We're pleased to announce some special guests are confirmed to present some of the featured films.</p>
+						<button type="button" class="btn btn-default">Show more</button>
+								<hr>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	<!--Section break-->
+
+	<div class="container-fluid">
+		<div class="row row1">
+			<img src="images/brooklyn-image6.png">
+		</div>
+	</div>
+
+
+		<!-- Getting There Section-->
+
+		<div class="container-fluid">
+			<div class="row getting-there" style="color: black">
+				<div class="col-xs-4">
+					<div class="column-1">
+						<h1>Getting there</h1>
+					</div>
+				</div>
+				<div class="container address">
+				<img id="getting-there" src="images/getting-there.png">
+						<div id="address">
+						<h3>Address: 334 Furman St, Brooklyn, NY 11201</h3></div>
+					</div>
+				</div>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- Map -->
+
+	<div class="container-fluid google-map">
+		<div class="col-xs-12">
+			<div id="map"></div>
+				<div class="overlay" onClick="style.pointerEvents='none'"></div>
+					<iframe src="https://www.google.com/maps/d/embed?mid=1L-lx-i8EMKC5LQqLi40pnVfZJqk" width="100%" height="480"></iframe>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Image and text -->
+
+    <div class="footer" id="footer">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-5">
+					<nav class="navbar-nav" >
+						<ul class="nav-item">
+							<a class="btn btn-circle" href="#"><i class="fa fa-twitter fa-2x"></i></a>
+							<a class="btn btn-circle" href="#"><i class="fa fa-facebook fa-2x"></i></a>
+							<a class="btn btn-circle" href="#"><i class="fa fa-google-plus fa-2x"></i></a>
+							<a class="btn btn-circle" href="#"><i class="fa fa-flickr fa-2x"></i></a>
+							<a class="btn btn-circle" href="#"><i class="fa fa-spotify fa-2x"></i></a>
+						</ul>
+				</div>
+					<div class="col-xs-7">
+						<div class="event-copyright">Copyright © 2017 Brooklyn Vibes Event Co.</div>
+					</div>
+					</nav>
+				</div>
+   </body>
+</html>
